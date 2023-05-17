@@ -22,7 +22,14 @@ class StoreMahasiswaRequests extends FormRequest
     public function rules()
     {
         return [
-            
+            'Nim' => 'required|min:10',
+            'Nama' => 'required',
+            'Image' => 'required',
+            'Jurusan' => 'required',
+            'No_Handphone' => 'required|min:12',
+            'Email' => 'required',
+            'TanggalLahir' => 'required',
+            'kelas_id' => 'required',
         ];
     }
 }

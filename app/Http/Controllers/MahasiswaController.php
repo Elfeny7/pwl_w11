@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMahasiswaRequests;
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
 use App\Http\Resources\MahasiswaResource;
@@ -28,9 +29,21 @@ class MahasiswaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreMahasiswaRequests $request)
     {
-        //
+        // return response()->json('hello');
+        return new MahasiswaResource(Mahasiswa::create(
+            [
+                'Nim' => $request->Nim,
+                'Nama' => $request->Nama,
+                'Image' => $request->Image,
+                'Jurusan' => $request->Jurusan,
+                'No_Handphone' => $request->No_Handphone,
+                'Email' => $request->Email,
+                'TanggalLahir' => $request->TanggalLahir,
+                'kelas_id' => $request->kelas_id
+            ]
+        ));
     }
 
     /**

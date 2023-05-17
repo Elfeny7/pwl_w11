@@ -25,5 +25,4 @@ class Mahasiswa extends Model
         'kelas_id',
     ];
 
-    
 }
